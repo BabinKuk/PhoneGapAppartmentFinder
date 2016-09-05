@@ -1,0 +1,32 @@
+<div ng-controller="DetailsCtrl">
+	<h3 class="page-heading">RentFinds Apartment Listing</h3>
+	<div class="details">
+		<a href="/#rentals" class="button tiny back">Back To Listings</a>
+		<div class="row">
+		  	<div class="small-12 columns">
+		  		<img src="{{data.image_url}}">
+		  	 	<div class="label">{{data.city}}</div>
+		  		<h3>{{data.title}}</h3>
+		  		<p>{{data.description}}</p>
+		  		<p>Bedrooms: {{data.bedrooms}}</p>
+		  		<h4 class="page-heading">Contact & Location Info</h4>
+		  		<ul class="no-bullet">
+		  		<li><strong>Phone: </strong>{{data.phone}}</li>
+		  		<li><strong>Email: </strong>{{data.email}}</li>
+		  		<li><strong>Address: </strong>{{data.street_address}}</li>
+		  		<li><strong>City: </strong>{{data.city}}</li>
+		  		<li><strong>State: </strong>{{data.state}}</li>
+		  		<li><strong>Zipcode: </strong>{{data.zipcode}}</li>
+		  		</ul>
+		  		<a class="button" href="mailto:{{data.email}}?Subject=Rental%20Inquiry">Contact Lister</a>
+		  	</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns actions">
+		<a ng-controller="EditCtrl" href="#edit/{{id}}">Edit</a> | 
+		<a ng-controller="RentalsCtrl" ng-click="removeRental(rental, id)" href="#">Remove</a>
+	</div>
+</div>
